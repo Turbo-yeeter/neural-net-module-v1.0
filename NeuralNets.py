@@ -128,6 +128,9 @@ class NeuralNetwork:
             nodes[4][i] = ActivationFunction(x)
         print("Outputs:", nodes[4])
 
+            for i in range(5):
+            self.NodesTable[i] = nodes[i]
+
     def AddWeightsToWeightPool(self):
         """Adds the weights of the neural network to a weights pool."""
         for i in range(5):
