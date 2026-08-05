@@ -87,7 +87,7 @@ class NeuralNetwork:
         return(self.NodesTable, self.WeightsTable, self.BiasTable)
         
     def ForwardPass(self, inputs, acts=["identity", "identity", "identity", "identity"]):
-1       """A forward pass in a neural network."""
+        """A forward pass in a neural network."""
         matrix = self.NetworkMatrix # We don't need a shallow copy of NetworkMatrix because we aren't going to change it.
         nodes = self.NodesTable.copy()
         weights = self.WeightsTable.copy()
