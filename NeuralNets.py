@@ -74,8 +74,8 @@ class NeuralNetwork:
                self.WeightsTable[3].append(uniform(-1,1))
             else:
                 self.WeightsTable[3].append(choice(genePool))
-    def PrintMatrix(self):
-        """Debug for printing a neural network."""
+    def GetMatrix(self):
+        """Returns the values of the weights, biases, and nodes of a neural network."""
         print("Matrix:", self.NetworkMatrix)
         for i in range(5):
             print("Layer:", i)
@@ -83,6 +83,7 @@ class NeuralNetwork:
             if i >= 1:
                 print("Weights:", self.WeightsTable[i-1])
                 print("Biases:", self.BiasTable[i-1])
+        return(self.NodesTable, self.WeightsTable, self.BiasTable)
         
     def ForwardPass(self, inputs):
         """A forward pass in a neural network."""
@@ -131,9 +132,5 @@ class NeuralNetwork:
             for i in range(5):
             self.NodesTable[i] = nodes[i]
 
-    def AddWeightsToWeightPool(self):
-        """Adds the weights of the neural network to a weights pool."""
-        for i in range(5):
-            for i2 in range(len(self.WeightsTable[i])):
-                WeightsPool.append(self.WeightsTable[i][i2])
+
                 
