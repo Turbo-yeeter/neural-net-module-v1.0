@@ -13,9 +13,7 @@ h1, h2, h3: The number of hidden nodes on layers 1, 2, and 3 respectively.
 o: The number of output nodes.
 genePool: The table of weights that will be used for the neural network (chooses randomly.) If this is set to none, randomly generates weights with float values from -1 to 1.
 
-PrintMatrix(): Prints the nodes, weights, and biases of the neural network.
+GetMatrix(): Prints and returns the nodes, weights, and biases of the neural network. (Returns a tuple of length 3.)
 
 ForwardPass(inputs): Does a forward pass of the neural network.
 inputs: The values for the input nodes. MUST be an iterable with length equal to the amount of input nodes of the network.
-
-AddWeightsToWeightPool(): Adds the network's weights to a gene pool for other networks to pull from.
