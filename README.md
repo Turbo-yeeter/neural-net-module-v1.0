@@ -1,4 +1,4 @@
-# neural-net-module-v1.0
+# neural-net-module-v1.1
 Python Module for creating Neural Networks.
 
 Documentation:
