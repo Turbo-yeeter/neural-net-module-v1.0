@@ -100,38 +100,39 @@ class NeuralNetwork:
         for i in range(matrix[1]):
             currweights = weights.copy()[i * matrix[0]:(i + 1) * matrix[0]]
             for i2 in range(matrix[0]):
-                storagetable.append(nodes[0][i2])
-            storagetable.append(biases[0][i])
-            sums = sum(storagetable)
+                storagelist.append(nodes[0][i2])
+            storagelist.append(biases[0][i])
+            sums = sum(storagelist)
             nodes[1][i] = ActivationFunction(x)
-        storagetable.clear()
+        storagelist.clear()
         for i in range(matrix[2]):
             currweights = weights.copy()[i * matrix[1]:(i + 1) * matrix[1]]
             for i2 in range(matrix[1]):
-                storagetable.append(nodes[1][i2])
-            storagetable.append(biases[1][i])
-            sums = sum(storagetable)
+                storagelist.append(nodes[1][i2])
+            storagelist.append(biases[1][i])
+            sums = sum(storagelist)
             nodes[2][i] = ActivationFunction(x)
-        storagetable.clear()
+        storagelist.clear()
         for i in range(matrix[3]):
             currweights = weights.copy()[i * matrix[2]:(i + 1) * matrix[2]]
             for i2 in range(matrix[2]):
-                storagetable.append(nodes[2][i2])
-            storagetable.append(biases[2][i])
-            sums = sum(storagetable)
+                storagelist.append(nodes[2][i2])
+            storagelist.append(biases[2][i])
+            sums = sum(storagelist)
             nodes[3][i] = ActivationFunction(x)
-        storagetable.clear()
+        storagelist.clear()
         for i in range(matrix[4]):
             currweights = weights.copy()[i * matrix[3]:(i + 1) * matrix[3]]
             for i2 in range(matrix[3]):
-                storagetable.append(nodes[3][i2])
-            storagetable.append(biases[3][i])
-            sums = sum(storagetable)
+                storagelist.append(nodes[3][i2])
+            storagelist.append(biases[3][i])
+            sums = sum(storagelist)
             nodes[4][i] = ActivationFunction(x)
         print("Outputs:", nodes[4])
 
         for i in range(5):
             self.NodesTable[i] = nodes[i]
+
 
 
                 
