@@ -130,8 +130,8 @@ class NeuralNetwork:
             nodes[4][i] = ActivationFunction(x)
         print("Outputs:", nodes[4])
 
-            for i in range(5):
-                self.NodesTable[i] = nodes[i]
+        for i in range(5):
+            self.NodesTable[i] = nodes[i]
 
 
                 
