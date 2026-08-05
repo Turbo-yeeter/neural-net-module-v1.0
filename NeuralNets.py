@@ -91,7 +91,7 @@ class NeuralNetwork:
         matrix = self.NetworkMatrix # We don't need a shallow copy of NetworkMatrix because we aren't going to change it.
         nodes = self.NodesTable.copy()
         weights = self.WeightsTable.copy()
-        biases = self.BiasesTable.copy()
+        biases = self.BiasTable.copy()
         sums = None
         storagelist = []
         print("Inputs:", inputs)
@@ -131,7 +131,7 @@ class NeuralNetwork:
         print("Outputs:", nodes[4])
 
             for i in range(5):
-            self.NodesTable[i] = nodes[i]
+                self.NodesTable[i] = nodes[i]
 
 
                 
