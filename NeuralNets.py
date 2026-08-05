@@ -3,6 +3,7 @@ from math import e
 import random
 from random import uniform, choice, random
 
+# Neural Network Module v1.1
 def ActivationFunction(x, FunctionName="identity"):
     """Multiple activation functions in one!"""
     match FunctionName:
