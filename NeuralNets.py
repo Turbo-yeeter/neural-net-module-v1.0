@@ -103,7 +103,7 @@ class NeuralNetwork:
                 storagelist.append(nodes[0][i2])
             storagelist.append(biases[0][i])
             sums = sum(storagelist)
-            nodes[1][i] = ActivationFunction(x)
+            nodes[1][i] = ActivationFunction(sums)
         storagelist.clear()
         for i in range(matrix[2]):
             currweights = weights.copy()[i * matrix[1]:(i + 1) * matrix[1]]
@@ -111,7 +111,7 @@ class NeuralNetwork:
                 storagelist.append(nodes[1][i2])
             storagelist.append(biases[1][i])
             sums = sum(storagelist)
-            nodes[2][i] = ActivationFunction(x)
+            nodes[2][i] = ActivationFunction(sums)
         storagelist.clear()
         for i in range(matrix[3]):
             currweights = weights.copy()[i * matrix[2]:(i + 1) * matrix[2]]
@@ -119,7 +119,7 @@ class NeuralNetwork:
                 storagelist.append(nodes[2][i2])
             storagelist.append(biases[2][i])
             sums = sum(storagelist)
-            nodes[3][i] = ActivationFunction(x)
+            nodes[3][i] = ActivationFunction(sums)
         storagelist.clear()
         for i in range(matrix[4]):
             currweights = weights.copy()[i * matrix[3]:(i + 1) * matrix[3]]
@@ -127,11 +127,14 @@ class NeuralNetwork:
                 storagelist.append(nodes[3][i2])
             storagelist.append(biases[3][i])
             sums = sum(storagelist)
-            nodes[4][i] = ActivationFunction(x)
+            nodes[4][i] = ActivationFunction(sums)
         print("Outputs:", nodes[4])
 
         for i in range(5):
             self.NodesTable[i] = nodes[i]
+
+
+                
 
 
 
