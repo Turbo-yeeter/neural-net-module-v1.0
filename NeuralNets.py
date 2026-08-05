@@ -86,8 +86,8 @@ class NeuralNetwork:
                 print("Biases:", self.BiasTable[i-1])
         return(self.NodesTable, self.WeightsTable, self.BiasTable)
         
-    def ForwardPass(self, inputs):
-        """A forward pass in a neural network."""
+    def ForwardPass(self, inputs, acts=["identity", "identity", "identity", "identity"])
+1       """A forward pass in a neural network."""
         matrix = self.NetworkMatrix # We don't need a shallow copy of NetworkMatrix because we aren't going to change it.
         nodes = self.NodesTable.copy()
         weights = self.WeightsTable.copy()
@@ -103,7 +103,7 @@ class NeuralNetwork:
                 storagelist.append(nodes[0][i2])
             storagelist.append(biases[0][i])
             sums = sum(storagelist)
-            nodes[1][i] = ActivationFunction(sums)
+            nodes[1][i] = ActivationFunction(sums, acts[0])
         storagelist.clear()
         for i in range(matrix[2]):
             currweights = weights.copy()[i * matrix[1]:(i + 1) * matrix[1]]
@@ -111,7 +111,7 @@ class NeuralNetwork:
                 storagelist.append(nodes[1][i2])
             storagelist.append(biases[1][i])
             sums = sum(storagelist)
-            nodes[2][i] = ActivationFunction(sums)
+            nodes[2][i] = ActivationFunction(sums, acts[1])
         storagelist.clear()
         for i in range(matrix[3]):
             currweights = weights.copy()[i * matrix[2]:(i + 1) * matrix[2]]
@@ -119,7 +119,7 @@ class NeuralNetwork:
                 storagelist.append(nodes[2][i2])
             storagelist.append(biases[2][i])
             sums = sum(storagelist)
-            nodes[3][i] = ActivationFunction(sums)
+            nodes[3][i] = ActivationFunction(sums, acts[2])
         storagelist.clear()
         for i in range(matrix[4]):
             currweights = weights.copy()[i * matrix[3]:(i + 1) * matrix[3]]
@@ -127,15 +127,11 @@ class NeuralNetwork:
                 storagelist.append(nodes[3][i2])
             storagelist.append(biases[3][i])
             sums = sum(storagelist)
-            nodes[4][i] = ActivationFunction(sums)
+            nodes[4][i] = ActivationFunction(sums, acts[3])
         print("Outputs:", nodes[4])
 
         for i in range(5):
             self.NodesTable[i] = nodes[i]
-
-
-                
-
 
 
                 
