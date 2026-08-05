@@ -15,5 +15,6 @@ genePool: The table of weights that will be used for the neural network (chooses
 
 GetMatrix(): Prints and returns the nodes, weights, and biases of the neural network. (Returns a tuple of length 3.)
 
-ForwardPass(inputs): Does a forward pass of the neural network.
+ForwardPass(inputs, acts=["identity", "identity", "identity", "identity"]): Does a forward pass of the neural network.
 inputs: The values for the input nodes. MUST be an iterable with length equal to the amount of input nodes of the network.
+acts: The types of activation functions used. Is an iterable with length 4.
